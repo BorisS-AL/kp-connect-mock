@@ -1,0 +1,150 @@
+/* ============================================================================
+   KP CONNECT — SHARED SUBPAGE COMPONENTS
+   Reusable blocks used across interior pages (About, Services, Contact, etc.).
+   Linked on every subpage after blocks.css. References tokens.css only.
+   Each component = a candidate Drupal block/template.
+   ============================================================================ */
+
+/* ---- BLOCK: page hero banner ([CONFIRMED] grey band, centered orange title) */
+.page-hero{ background:#D8D8D8; min-height:380px; display:grid; place-items:center; text-align:center; padding:40px var(--pad); }
+.page-hero h1{ color:var(--heading-color); font-family:var(--font-head); font-weight:var(--fw-bold); font-size:var(--fs-display); margin:0; }
+.page-hero p{ color:#4a4a4a; max-width:60ch; margin:12px auto 0; }
+
+/* ---- split (text + media, 2-col) ----------------------------------------- */
+.split .wrap{ display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
+.split h2{ color:var(--heading-color); font-size:var(--fs-h1); }
+.split__media img{ width:100%; border-radius:var(--radius-lg); }
+.tagline-orange{ color:var(--accent); font-family:var(--font-head); font-weight:var(--fw-bold); font-size:var(--fs-h2); margin-top:10px; }
+.statline{ display:flex; gap:30px; margin-top:18px; }
+.statline .stat__num{ font-family:var(--font-head); font-size:28px; font-weight:var(--fw-x); color:var(--accent); }
+.statline .stat__label{ font-size:var(--fs-small); color:var(--muted); }
+
+/* ---- feature cards (Vision/Mission/Impact, benefits, etc.) --------------- */
+.feature-cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap); margin-top:30px; }
+.feature-card{ background:var(--peach); border:1.5px solid var(--card-border); border-radius:var(--radius-lg); padding:26px; text-align:center; }
+.feature-card .ic{ width:54px; height:54px; margin:0 auto 14px; display:grid; place-items:center; background:#fff; border-radius:12px; font-size:26px; }
+.feature-card h3{ margin:0 0 8px; }
+.feature-card .label{ color:var(--accent); font-family:var(--font-head); font-weight:var(--fw-bold); letter-spacing:.04em; margin-top:14px; }
+
+/* ---- timeline (Our Journey) ---------------------------------------------- */
+.timeline{ max-width:880px; margin:30px auto 0; position:relative; }
+.timeline__item{ position:relative; padding:0 0 34px 64px; }
+.timeline__item::before{ content:""; position:absolute; left:18px; top:34px; bottom:0; width:2px; background:var(--accent); }
+.timeline__item:last-child::before{ display:none; }
+.timeline__num{ position:absolute; left:0; top:0; width:38px; height:38px; border-radius:50%; background:var(--kp-gradient); color:#fff; display:grid; place-items:center; font-weight:var(--fw-bold); }
+.timeline__item h4{ margin:4px 0 4px; font-size:18px; }
+.timeline__item p{ margin:0; color:var(--muted); }
+
+/* ---- profile / leader card ----------------------------------------------- */
+.profile-card{ background:var(--peach); border:1.5px solid var(--card-border); border-radius:var(--radius-lg);
+               display:grid; grid-template-columns:1fr 1.4fr; gap:34px; padding:30px; align-items:center; max-width:1000px; margin:24px auto 0; }
+.profile-card__photo{ background:#fff; border-radius:var(--radius); aspect-ratio:1/1; } /* [STUB] photo */
+.profile-card__photo img{ width:100%; height:100%; object-fit:cover; border-radius:var(--radius); }
+.profile-card h3{ font-size:28px; margin:0 0 4px; }
+.profile-card .role{ color:var(--accent); font-weight:var(--fw-semi); margin-bottom:12px; }
+
+/* ---- process steps (Train→Certify→Hire, application steps) --------------- */
+.steps{ display:grid; grid-auto-flow:column; grid-auto-columns:1fr; gap:var(--gap); margin-top:30px; }
+.step{ text-align:center; }
+.step__n{ width:46px; height:46px; margin:0 auto 12px; border-radius:50%; background:var(--kp-gradient); color:#fff; display:grid; place-items:center; font-weight:var(--fw-bold); }
+
+/* ---- generic form -------------------------------------------------------- */
+.form-card{ border:1.5px solid var(--card-border); border-radius:var(--radius-lg); padding:28px; background:#fff; }
+.form-row{ display:grid; gap:14px; margin-bottom:14px; }
+.form-row.two{ grid-template-columns:1fr 1fr; }
+.field label{ display:block; font-size:var(--fs-small); font-weight:var(--fw-semi); margin-bottom:6px; }
+.field input,.field select,.field textarea{ width:100%; padding:11px 12px; border:1px solid var(--line); border-radius:var(--radius); font-family:inherit; font-size:15px; }
+.field textarea{ min-height:120px; resize:vertical; }
+
+/* ---- info tiles (contact details) ---------------------------------------- */
+.info-tiles{ display:grid; gap:16px; }
+.info-tile{ display:flex; gap:14px; align-items:flex-start; }
+.info-tile .ic{ width:42px; height:42px; flex:0 0 auto; border-radius:10px; background:var(--peach); display:grid; place-items:center; font-size:20px; }
+.map-embed{ background:#D8D8D8; border-radius:var(--radius-lg); aspect-ratio:16/9; display:grid; place-items:center; color:#666; } /* [STUB] map */
+
+/* ---- blog cards ---------------------------------------------------------- */
+.blog-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap); margin-top:30px; }
+.blog-card{ border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; background:#fff; transition:transform .15s, box-shadow .15s; }
+.blog-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow); }
+.blog-card__thumb{ background:#D8D8D8; aspect-ratio:16/9; } /* [STUB] image */
+.blog-card__body{ padding:18px; }
+.blog-card__meta{ display:flex; gap:10px; flex-wrap:wrap; font-size:var(--fs-small); color:var(--muted); margin-bottom:8px; }
+.chips{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+.chip{ border:1px solid var(--card-border); color:var(--accent); border-radius:999px; padding:6px 14px; font-size:var(--fs-small); cursor:pointer; }
+.chip.on{ background:var(--kp-gradient); color:#fff; border-color:transparent; }
+
+/* ---- job cards ----------------------------------------------------------- */
+.job-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:var(--gap); margin-top:24px; }
+.job-card{ border:1px solid var(--line); border-radius:var(--radius-lg); padding:20px; background:#fff; }
+.job-card__tags{ display:flex; gap:8px; flex-wrap:wrap; margin:10px 0; }
+
+/* ---- toggle bar (Individual / Organization) ------------------------------ */
+.toggle-bar{ display:flex; gap:14px; justify-content:center; margin-bottom:36px; flex-wrap:wrap; }
+.toggle-btn{ padding:13px 30px; border-radius:var(--radius); border:2px solid var(--accent); background:#fff;
+             color:var(--ink); font-weight:var(--fw-semi); cursor:pointer; font-size:15px; }
+.toggle-btn.on{ background:var(--kp-gradient); color:#fff; border-color:transparent; }
+
+/* ---- tab bar (sub-tabs) --------------------------------------------------- */
+.tab-bar{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:28px; }
+.tab-btn{ padding:10px 20px; border-radius:999px; border:1.5px solid var(--card-border); background:#fff;
+          color:var(--accent); font-weight:var(--fw-semi); cursor:pointer; font-size:14px; }
+.tab-btn.on{ background:var(--kp-gradient); color:#fff; border-color:transparent; }
+
+/* ---- media card (image-top directory/service card; ONE component) -------- */
+.media-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap); }
+.media-grid.two{ grid-template-columns:repeat(2,1fr); }
+.media-card{ border:1.5px solid var(--card-border); border-radius:var(--radius-lg); overflow:hidden;
+             background:#fff; display:flex; flex-direction:column; transition:transform .15s, box-shadow .15s; }
+.media-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow); }
+.media-card__img{ aspect-ratio:16/9; background:#D8D8D8; }            /* [STUB] generic card photo */
+.media-card__img img{ width:100%; height:100%; object-fit:cover; }
+.media-card__body{ padding:20px; }
+.media-card__head{ display:flex; align-items:center; gap:12px; margin-bottom:8px; }
+.media-card__icon{ width:46px; height:46px; flex:0 0 auto; display:grid; place-items:center; background:var(--peach); border-radius:10px; font-size:22px; }
+.media-card h3{ margin:0; font-size:var(--fs-h3); }
+
+/* ---- nationwide / map split ---------------------------------------------- */
+.nationwide .wrap{ display:grid; grid-template-columns:1fr 1.1fr; gap:40px; align-items:center; }
+.nationwide h2{ color:var(--heading-color); font-size:var(--fs-h1); }
+.nationwide img{ width:100%; }
+
+/* ---- dark hero (KP Network) ---------------------------------------------- */
+.hero-dark{ background:linear-gradient(rgba(20,20,22,.78),rgba(20,20,22,.86)), #2a2a2a; color:#fff; text-align:center; padding:80px var(--pad); } /* [STUB] hero photo behind overlay */
+.hero-dark h1{ color:#fff; font-size:var(--fs-display); margin:0 0 6px; }
+.hero-dark .sub{ opacity:.85; margin:0 0 18px; }
+.hero-dark .integrator{ font-family:var(--font-head); font-weight:var(--fw-bold); font-size:24px; margin:18px 0 4px; }
+.kpnet-tagline{ text-align:center; font-family:var(--font-head); font-weight:var(--fw-bold); font-size:30px; }
+
+/* ---- gradient hero (KP Contributor, program pages) ----------------------- */
+.hero-gradient{ background:var(--kp-gradient); color:#fff; text-align:center; padding:74px var(--pad); }
+.hero-gradient h1{ color:#fff; font-size:var(--fs-display); margin:0 0 10px; }
+.hero-gradient .sub{ opacity:.92; max-width:62ch; margin:0 auto 16px; }
+.hero-gradient .pills{ display:flex; gap:22px; justify-content:center; flex-wrap:wrap; margin-bottom:20px; font-weight:var(--fw-semi); }
+.hero-gradient .btn--primary{ background:#fff; color:var(--accent); }
+.hero-gradient .stat-big{ font-family:var(--font-head); font-weight:var(--fw-x); font-size:40px; margin:6px 0 0; }
+
+/* ---- audience chips row -------------------------------------------------- */
+.aud-chips{ display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:24px; }
+.aud-chips .chip{ cursor:default; }
+
+/* ---- metric row on light ------------------------------------------------- */
+.metric-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap); text-align:center; }
+.metric-row .n{ font-family:var(--font-head); font-weight:var(--fw-x); font-size:42px; color:var(--accent); }
+@media (max-width:860px){ .metric-row{ grid-template-columns:1fr; } }
+
+/* ---- diagram + detail panel (stakeholder model) -------------------------- */
+.diagram-split .wrap{ display:grid; grid-template-columns:1.1fr 1fr; gap:40px; align-items:center; }
+.diagram-split img{ width:100%; }
+.diagram-detail{ background:var(--kp-gradient); color:#fff; border-radius:var(--radius-lg); padding:30px; }
+.diagram-detail h3{ color:#fff; margin:0 0 10px; }
+
+/* ---- responsive ---------------------------------------------------------- */
+@media (max-width:860px){
+  .split .wrap{ grid-template-columns:1fr; }
+  .feature-cards,.blog-grid,.media-grid,.media-grid.two{ grid-template-columns:1fr; }
+  .profile-card{ grid-template-columns:1fr; }
+  .steps{ grid-auto-flow:row; }
+  .form-row.two{ grid-template-columns:1fr; }
+  .job-grid{ grid-template-columns:1fr; }
+  .nationwide .wrap{ grid-template-columns:1fr; }
+}

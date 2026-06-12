@@ -1,94 +1,78 @@
 /* ============================================================================
    KP CONNECT — DESIGN TOKENS
    THE ONE PLACE to change the look. Every other stylesheet references these.
-   For a Drupal team: these map 1:1 to your theme's CSS custom properties / SCSS
-   variables. Change a value here and it applies everywhere.
+   For a Drupal team: these map 1:1 to your theme's CSS custom properties.
 
    STATUS KEY:
-     [CONFIRMED] = read from the brand doc / high-fidelity PDF.
-     [STUB]      = placeholder pending exact Figma inspect values. See STUBS.md.
+     [CONFIRMED] = read/sampled directly from the high-fidelity design.
+     [INFERRED]  = best match from the PDF (e.g. fonts); confirm if you have specs.
+     [STUB]      = placeholder pending real content. See STUBS.md.
    ============================================================================ */
 
 :root{
-  /* ---- BRAND COLOR ---------------------------------------------------------
-     [CONFIRMED] Primary profile from KP Connect Redesign Details.docx:
-       #E17327 (orange)  +  #C02126 (red)
-     The homepage uses these as a left-to-right gradient on the statement band. */
-  --kp-orange:        #E17327;   /* [CONFIRMED] primary */
-  --kp-red:           #C02126;   /* [CONFIRMED] secondary */
-  --kp-gradient:      linear-gradient(90deg, var(--kp-orange) 0%, var(--kp-red) 100%); /* [CONFIRMED] hero statement band */
+  /* ---- BRAND COLOR ([CONFIRMED], sampled from the design) ---------------- */
+  --kp-orange:     #E17327;   /* primary */
+  --kp-red:        #C02126;   /* secondary */
+  --kp-gradient:   linear-gradient(90deg, #E17327 0%, #C02126 100%); /* statement band, buttons */
 
-  /* Neutrals — [STUB] approximated from the PDF; confirm exact hex in Figma. */
-  --ink:              #23262b;   /* [STUB] body text */
-  --muted:            #6b7280;   /* [STUB] secondary text */
-  --line:             #e3e6ea;   /* [STUB] hairline borders */
-  --surface:          #f5f6f8;   /* [STUB] light section / image placeholder */
-  --bg:               #ffffff;   /* [STUB] page background */
-  --on-accent:        #ffffff;   /* text on orange/red */
+  /* Surfaces / neutrals ([CONFIRMED] sampled) */
+  --bg:            #ffffff;   /* page background */
+  --peach:         #FCF1E9;   /* warm section background (Services, Supply Chain) */
+  --ink:           #2A2A2A;   /* body / heading text on light */
+  --muted:         #6B6B6B;   /* secondary text */
+  --line:          #ECECEC;   /* hairline borders */
+  --pill-bg:       #F4F4F4;   /* tag pill background */
+  --card-border:   #E17327;   /* card outline (orange) */
+  --on-accent:     #ffffff;
 
-  /* Semantic roles (reference these in blocks, not the raw brand colors) */
-  --accent:           var(--kp-orange);
-  --accent-2:         var(--kp-red);
-  --heading-color:    var(--kp-orange);   /* [CONFIRMED] section headings render orange */
-  --link:             var(--kp-orange);
+  /* Semantic roles */
+  --accent:        var(--kp-orange);
+  --accent-2:      var(--kp-red);
+  --heading-color: var(--kp-orange);   /* [CONFIRMED] section headings are orange */
+  --link:          var(--kp-orange);
 
-  /* ---- TYPE ----------------------------------------------------------------
-     [STUB] Figma font family not yet read from inspect. Visually a humanist/
-     geometric sans (Poppins/Montserrat-like for headings). Replace --font-* once
-     confirmed; everything below cascades from these two tokens. */
-  --font-head: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; /* [STUB] */
-  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;   /* [STUB] */
+  /* ---- TYPE -------------------------------------------------------------
+     [INFERRED] from the PDF: geometric bold display + humanist body.
+     Closest free Google Fonts: Poppins (headings) + Open Sans (body).
+     Loaded in index.html. Swap here if you confirm the real Figma fonts. */
+  --font-head: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
-  /* Type scale — [STUB] pending exact Figma sizes */
-  --fs-h1:    44px;   /* [STUB] */
-  --fs-h2:    30px;   /* [STUB] */
-  --fs-h3:    20px;   /* [STUB] */
-  --fs-body:  16px;   /* [STUB] */
-  --fs-small: 13px;   /* [STUB] */
+  /* Type scale ([INFERRED] proportions matched to the design) */
+  --fs-display: 46px;  /* big section titles (KP Services, Why Choose KP) */
+  --fs-h1:      40px;
+  --fs-h2:      30px;
+  --fs-h3:      22px;
+  --fs-lead:    20px;  /* statement band / leads */
+  --fs-body:    16px;
+  --fs-small:   13px;
   --lh-tight: 1.15;
-  --lh-body:  1.6;
-  --fw-bold:  700;
-  --fw-semi:  600;
+  --lh-body:  1.65;
+  --fw-reg: 400; --fw-semi: 600; --fw-bold: 700; --fw-x: 800;
 
-  /* ---- SPACING & LAYOUT ----------------------------------------------------
-     [CONFIRMED] breakpoints from brand doc: desktop 1440 (4-col cards),
-     tablet 768 (2-col), mobile 375 (1-col + hamburger).
-     [STUB] exact section padding / gaps pending Figma. */
-  --maxw:        1200px;  /* [STUB] content max width */
-  --pad:         24px;    /* [STUB] gutter */
-  --gap:         24px;    /* [STUB] grid gap */
-  --section-y:   72px;    /* [STUB] vertical section rhythm */
-  --radius:      6px;     /* [STUB] button/card corner radius */
-  --radius-lg:   12px;    /* [STUB] large card radius */
-  --shadow:      0 8px 24px rgba(0,0,0,.08); /* [STUB] card lift shadow */
-
-  /* Breakpoints are documented here for reference; used in media queries below.
-     --bp-tablet: 768px   --bp-mobile: 375px  (see base.css / blocks.css) */
+  /* ---- SPACING & LAYOUT --------------------------------------------------
+     [CONFIRMED] breakpoints from brand doc: 1440 / 768 / 375. */
+  --maxw:        1180px;
+  --pad:         24px;
+  --gap:         28px;
+  --section-y:   76px;
+  --radius:      8px;     /* buttons */
+  --radius-lg:   14px;    /* cards */
+  --shadow:      0 10px 30px rgba(0,0,0,.08);
+  --shadow-sm:   0 4px 14px rgba(0,0,0,.06);
 }
 
 /* ============================================================================
-   CONFIGURATOR STATES  (review aid only — not part of the final site)
-   Each toggle swaps a class on <html>; tokens shift live. See js/configurator.js.
-   These are DESIGN-CONVERSATION toggles, NOT confirmed Figma variants.
+   CONFIGURATOR STATES (review aid only — not part of the final site).
+   Design-conversation toggles, not confirmed Figma variants. See STUBS.md.
    ============================================================================ */
 
-/* Style B — alternate accent treatment of the SAME blocks
-   (buttons/headings lead with red instead of orange) */
-html.v-b{
-  --accent:        var(--kp-red);
-  --heading-color: var(--kp-red);
-  --radius:        2px;
-}
+/* Accent B — lead with red instead of orange */
+html.v-b{ --accent:#C02126; --heading-color:#C02126; --card-border:#C02126; }
 
 /* Density — compact spacing */
-html.dense{
-  --section-y: 44px;
-  --gap:       16px;
-  --pad:       16px;
-  --fs-h1:     36px;
-  --fs-h2:     24px;
-}
+html.dense{ --section-y:48px; --gap:18px; --pad:18px; --fs-display:38px; --fs-h2:24px; }
 
-/* Layout — center the hero/about lead text instead of left-aligned */
+/* Centered leads */
 html.center .l-lead{ text-align:center; margin-inline:auto; }
 html.center .l-lead .actions{ justify-content:center; }

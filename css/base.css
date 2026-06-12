@@ -1,49 +1,45 @@
 /* ============================================================================
-   KP CONNECT — BASE
-   Resets + element-level typography. References tokens.css only (no raw values
-   that belong in tokens). Drupal note: this maps to a theme's base/global layer.
+   KP CONNECT — BASE  (resets + element typography + buttons + a11y)
+   References tokens.css only. Maps to a Drupal theme's global layer.
    ============================================================================ */
 
 *,*::before,*::after{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }            /* [CONFIRMED] smooth scrolling nav */
-body{ margin:0; }
+html{ scroll-behavior:smooth; }                    /* [CONFIRMED] smooth scroll */
+body{ margin:0; font-family:var(--font-body); font-size:var(--fs-body);
+      line-height:var(--lh-body); color:var(--ink); background:var(--bg);
+      -webkit-font-smoothing:antialiased; }
 
-body{
-  font-family:var(--font-body);
-  font-size:var(--fs-body);
-  line-height:var(--lh-body);
-  color:var(--ink);
-  background:var(--bg);
-  -webkit-font-smoothing:antialiased;
-}
-
-h1,h2,h3{ font-family:var(--font-head); line-height:var(--lh-tight); margin:0 0 .4em; }
+h1,h2,h3,h4{ font-family:var(--font-head); line-height:var(--lh-tight); margin:0 0 .5em; color:var(--ink); }
 h1{ font-size:var(--fs-h1); font-weight:var(--fw-bold); }
-h2{ font-size:var(--fs-h2); font-weight:var(--fw-bold); color:var(--heading-color); }
+h2{ font-size:var(--fs-h2); font-weight:var(--fw-bold); }
 h3{ font-size:var(--fs-h3); font-weight:var(--fw-semi); }
 p{ margin:0 0 1em; }
 a{ color:var(--link); text-decoration:none; }
 a:hover{ text-decoration:underline; }
 img{ max-width:100%; display:block; }
+ul{ margin:0; padding:0; list-style:none; }
 
-/* Shared layout helpers */
+/* Layout helpers */
 .wrap{ max-width:var(--maxw); margin-inline:auto; padding-inline:var(--pad); }
 .section{ padding-block:var(--section-y); }
+.section--peach{ background:var(--peach); }
 .muted{ color:var(--muted); }
-.lead{ font-size:calc(var(--fs-body) + 2px); color:var(--muted); max-width:60ch; }
-.eyebrow{ text-transform:uppercase; letter-spacing:.14em; font-size:var(--fs-small);
-          font-weight:var(--fw-bold); color:var(--accent); }
 .center-text{ text-align:center; }
+.section-title{ color:var(--heading-color); font-family:var(--font-head); font-weight:var(--fw-bold);
+                font-size:var(--fs-display); margin:0 0 10px; }
+.section-sub{ color:var(--ink); font-size:var(--fs-lead); max-width:60ch; margin:0 auto 8px; }
 
-/* Buttons — name by role, not color. [CONFIRMED] filled-orange + outline variants. */
-.btn{ display:inline-block; padding:12px 22px; border-radius:var(--radius);
-      font-weight:var(--fw-semi); font-size:15px; border:2px solid transparent;
-      cursor:pointer; transition:transform .15s ease, box-shadow .15s ease, background .15s ease; }
-.btn--primary{ background:var(--accent); color:var(--on-accent); }
-.btn--primary:hover{ transform:translateY(-2px); box-shadow:var(--shadow); text-decoration:none; } /* [CONFIRMED] CTA hover animation */
+/* Buttons — name by role, not colour. [CONFIRMED] gradient fill + outline. */
+.btn{ display:inline-block; padding:13px 26px; border-radius:var(--radius); font-family:var(--font-body);
+      font-weight:var(--fw-semi); font-size:15px; border:2px solid transparent; cursor:pointer;
+      transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease; }
+.btn--primary{ background:var(--kp-gradient); color:var(--on-accent); }
+.btn--primary:hover{ transform:translateY(-2px); box-shadow:var(--shadow-sm); text-decoration:none; } /* [CONFIRMED] CTA hover */
 .btn--outline{ background:transparent; color:var(--accent); border-color:var(--accent); }
 .btn--outline:hover{ background:var(--accent); color:var(--on-accent); text-decoration:none; }
-.actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; }
+.actions{ display:flex; gap:14px; flex-wrap:wrap; margin-top:24px; }
+
+.link-more{ color:var(--accent); font-weight:var(--fw-semi); text-decoration:underline; }
 
 /* Accessibility — [CONFIRMED goal] ADA compliance */
 :focus-visible{ outline:3px solid var(--kp-orange); outline-offset:2px; }

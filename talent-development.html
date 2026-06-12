@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KP Connect — Talent Development</title>
+<meta name="description" content="KP Talent Development — career tracks in cybersecurity and project management. We don't just train, we hire.">
+<!-- PAGE: Talent Development. Career tracks, KP advantage, Train→Certify→Hire, lead form. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/blocks.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="configurator" role="region" aria-label="Mock configurator (review aid)">
+  <div class="wrap">
+    <strong>Configurator</strong>
+    <div class="cfg-group"><span>Accent</span>
+      <button data-set="version" data-val="a" class="on">Orange</button>
+      <button data-set="version" data-val="b">Red</button></div>
+    <div class="cfg-group"><span>Density</span>
+      <button data-set="density" data-val="light" class="on">Light</button>
+      <button data-set="density" data-val="dense">Dense</button></div>
+    <span class="cfg-note">live toggles — review aid only</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-header__logo" href="index.html"><img src="assets/logo.png" alt="Kinetic Potential — KP Connect"></a>
+    <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle menu">&#9776;</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Home</a><a href="about.html">About</a>
+      <a href="services.html" class="has-caret is-active">Services</a>
+      <a href="blog.html">Blog</a><a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- BLOCK: gradient hero -->
+  <section class="hero-gradient">
+    <h1>Talent Development</h1>
+    <p class="sub">Combining technical training with experiential learning to develop tomorrow's workforce. Train. Certify. Get hired.</p>
+    <a class="btn btn--primary" href="#lead">Get Started</a>
+  </section>
+
+  <!-- BLOCK: career tracks -->
+  <section class="section"><div class="wrap">
+    <h2 class="section-title center-text">Career Tracks</h2>
+    <div class="media-grid two" style="margin-top:30px">
+      <article class="service-card">
+        <h3>Cybersecurity</h3>
+        <p class="tagline-orange" style="font-size:22px">$100k+ average salary</p>
+        <ul style="margin:12px 0 18px;padding-left:18px;color:var(--muted)">
+          <li>Security+ Certification Prep</li><li>SOC Analyst Skills</li><li>SIEM Tools Training</li><li>Incident Response Labs</li>
+        </ul>
+        <a class="btn btn--primary" href="#lead" style="width:100%;text-align:center">Explore Cybersecurity</a>
+      </article>
+      <article class="service-card">
+        <h3>Project Management</h3>
+        <p class="tagline-orange" style="font-size:22px">$92k average salary</p>
+        <ul style="margin:12px 0 18px;padding-left:18px;color:var(--muted)">
+          <li>Agile / Scrum Methodologies</li><li>JIRA &amp; Confluence</li><li>Stakeholder Communication</li><li>CAPM / PMP Preparation</li>
+        </ul>
+        <a class="btn btn--primary" href="#lead" style="width:100%;text-align:center">Explore Project Management</a>
+      </article>
+    </div>
+  </div></section>
+
+  <!-- BLOCK: KP advantage -->
+  <section class="section section--peach"><div class="wrap">
+    <h2 class="section-title center-text">Why Choose KP</h2>
+    <p class="section-sub center-text">We don't just train, we hire.</p>
+    <div class="feature-cards" style="margin-top:30px">
+      <article class="feature-card"><div class="ic">🎯</div><h3>Direct Hiring</h3><p class="muted">A direct path from training into real roles.</p></article>
+      <article class="feature-card"><div class="ic">👥</div><h3>Industry Mentors</h3><p class="muted">Learn from professionals working in the field.</p></article>
+      <article class="feature-card"><div class="ic">🤝</div><h3>Partner Network</h3><p class="muted">Connected to employers ready to hire.</p></article>
+    </div>
+  </div></section>
+
+  <!-- BLOCK: process -->
+  <section class="section"><div class="wrap">
+    <h2 class="section-title center-text">How It Works</h2>
+    <div class="steps">
+      <div class="step"><div class="step__n">1</div><h3>Train</h3><p class="muted">Hands-on, job-ready technical training.</p></div>
+      <div class="step"><div class="step__n">2</div><h3>Certify</h3><p class="muted">Earn industry-recognized certifications.</p></div>
+      <div class="step"><div class="step__n">3</div><h3>Hire</h3><p class="muted">Get matched with KP's employer partners.</p></div>
+    </div>
+  </div></section>
+
+  <!-- BLOCK: lead form -->
+  <section class="section section--peach" id="lead"><div class="wrap" style="max-width:760px">
+    <h2 class="section-title center-text">Start Your Application</h2>
+    <form class="form-card" onsubmit="return false">
+      <div class="form-row two">
+        <div class="field"><label for="l-name">Name</label><input id="l-name" type="text"></div>
+        <div class="field"><label for="l-phone">Phone</label><input id="l-phone" type="tel"></div>
+      </div>
+      <div class="form-row two">
+        <div class="field"><label for="l-city">City</label><input id="l-city" type="text"></div>
+        <div class="field"><label for="l-email">Email</label><input id="l-email" type="email"></div>
+      </div>
+      <div class="form-row"><div class="field"><label for="l-prog">Program Selection</label>
+        <select id="l-prog"><option>Cybersecurity</option><option>Project Management</option></select></div></div>
+      <button class="btn btn--primary" type="submit">Submit Application</button>
+    </form>
+  </div></section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__brand"><img src="assets/logo.png" alt="KP Connect"></div>
+    <div><h4>Explore KP Connect</h4>
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="blog.html">Blog</a><a href="kp-network.html">KP Network</a><a href="contact.html">Contact Us</a></div>
+    <div><h4>Services Quick Access</h4>
+      <a href="services.html">KP Academy</a><a href="services.html">KP University</a><a href="services.html">KP Care</a><a href="services.html">Innovative Workforce</a></div>
+    <div><h4>Help</h4>
+      <a href="contact.html">Live Chat</a><a href="contact.html">Contact</a><a href="#">FAQ</a></div>
+    <div>
+      <h4>Follow Us</h4>
+      <div class="social"><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Twitter">𝕏</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="YouTube">▶</a></div>
+      <h4 style="margin-top:18px">Stay Connected</h4>
+      <p class="muted" style="margin:0 0 10px">Subscribe to our newsletter</p>
+      <div class="newsletter"><label class="visually-hidden" for="nl-email">Email</label>
+        <input id="nl-email" type="email" placeholder="Enter your email">
+        <button class="btn btn--primary" type="button" style="width:100%">Subscribe</button></div>
+    </div>
+  </div>
+  <div class="site-footer__bar"><div class="wrap">
+    <span><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></span>
+    <span class="muted">© <span id="yr"></span> KP Connect. All rights reserved.</span>
+  </div></div>
+</footer>
+
+<script src="js/configurator.js"></script>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>

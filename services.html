@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KP Connect — Services</title>
+<meta name="description" content="KP Connect service directory for individuals and organizations.">
+<!-- PAGE: Services (directory). Individual/Organization toggle + Academy/University/Care/Innovative sub-tabs. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/blocks.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- BLOCK: configurator — REVIEW AID ONLY. -->
+<div class="configurator" role="region" aria-label="Mock configurator (review aid)">
+  <div class="wrap">
+    <strong>Configurator</strong>
+    <div class="cfg-group"><span>Accent</span>
+      <button data-set="version" data-val="a" class="on">Orange</button>
+      <button data-set="version" data-val="b">Red</button></div>
+    <div class="cfg-group"><span>Density</span>
+      <button data-set="density" data-val="light" class="on">Light</button>
+      <button data-set="density" data-val="dense">Dense</button></div>
+    <span class="cfg-note">live toggles — review aid only</span>
+  </div>
+</div>
+
+<!-- BLOCK: site header (CHROME → Drupal region) -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-header__logo" href="index.html"><img src="assets/logo.png" alt="Kinetic Potential — KP Connect"></a>
+    <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle menu">&#9776;</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="has-caret is-active">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- BLOCK: page hero -->
+  <section class="page-hero"><h1>KP Services</h1></section>
+
+  <!-- BLOCK: service directory (toggle Individual / Organization) -->
+  <section class="section" data-tabs>
+    <div class="wrap">
+      <div class="toggle-bar">
+        <button class="toggle-btn" data-tab="individual">👤 Individual</button>
+        <button class="toggle-btn on" data-tab="organization">🏢 Organization</button>
+      </div>
+
+      <!-- panel: Organization -->
+      <div data-panel="organization">
+        <div class="media-grid">
+          <article class="media-card"><div class="media-card__img"></div>
+            <div class="media-card__body"><div class="media-card__head"><span class="media-card__icon">💎</span><h3>Kinetic Potential Network</h3></div>
+            <p class="muted">KP collaborates with organizations from the government, academic, faith-based, nonprofit and corporate sectors to create positive change in local communities.</p>
+            <div class="tags"><span class="tag">Government Partners</span><span class="tag">Nonprofits</span><span class="tag">Academic Institutions</span></div>
+            <a class="link-more" href="kp-network.html">Know More…</a></div></article>
+
+          <article class="media-card"><div class="media-card__img"></div>
+            <div class="media-card__body"><div class="media-card__head"><span class="media-card__icon">💻</span><h3>Technology Modernization Grants</h3></div>
+            <p class="muted">KP invests in the technical capabilities of human-care organizations to increase their capacity to provide services to those most in need.</p>
+            <div class="tags"><span class="tag">Digital Infrastructure</span><span class="tag">Grant Funding</span><span class="tag">Capacity Building</span><span class="tag">Technical Support</span></div>
+            <a class="link-more" href="tech-modernization.html">Know More…</a></div></article>
+
+          <article class="media-card"><div class="media-card__img"></div>
+            <div class="media-card__body"><div class="media-card__head"><span class="media-card__icon">🎓</span><h3>Talent Development</h3></div>
+            <p class="muted">KP's training approach is like no other — combining technical training with experiential learning to develop tomorrow's workforce.</p>
+            <div class="tags"><span class="tag">Technical Training</span><span class="tag">Skills Assessment</span><span class="tag">Workforce Development</span></div>
+            <a class="link-more" href="talent-development.html">Know More…</a></div></article>
+        </div>
+      </div>
+
+      <!-- panel: Individual (nested sub-tabs) -->
+      <div data-panel="individual" hidden>
+        <div data-tabs>
+          <div class="tab-bar">
+            <button class="tab-btn on" data-tab="academy">🎓 KP Academy</button>
+            <button class="tab-btn" data-tab="university">🧑‍🎓 KP University</button>
+            <button class="tab-btn" data-tab="care">🫶 KP Care</button>
+            <button class="tab-btn" data-tab="innovative">🚀 Innovative Workforce</button>
+          </div>
+
+          <div data-panel="academy">
+            <div class="media-grid">
+              <article class="media-card"><div class="media-card__img"></div><div class="media-card__body"><h3>KP Scholars</h3><p class="muted">21st-century afterschool programming focusing on academic, social, and professional development.</p></div></article>
+              <article class="media-card"><div class="media-card__img"></div><div class="media-card__body"><h3>KP Tutors</h3><p class="muted">Academic remediation, credit recovery, virtual school, and PRE-ETS support.</p></div></article>
+              <article class="media-card"><div class="media-card__img"></div><div class="media-card__body"><h3>KP Mentors</h3><p class="muted">Life skills, class admin, and enrichment programs.</p></div></article>
+              <article class="media-card"><div class="media-card__img"></div><div class="media-card__body"><h3>Internships</h3><p class="muted">CTE / Pre-Apprenticeship in project management, cybersecurity, education, and more.</p></div></article>
+              <article class="media-card"><div class="media-card__img"></div><div class="media-card__body"><h3>Career Advisory</h3><p class="muted">Guidance on post-secondary applications, standardized testing, and career paths.</p></div></article>
+            </div>
+          </div>
+          <div data-panel="university" hidden>
+            <div class="media-grid">
+              <article class="media-card"><div class="media-card__img"></div><div class="media-card__body"><h3>Professional Development</h3><p class="muted">Skill-based training to advance careers.</p></div></article>
+              <article class="media-card"><div class="media-card__img"></div><div class="media-card__body"><h3>Workforce Development</h3><p class="muted">Programs aligned to in-demand roles.</p></div></article>
+              <article class="media-card"><div class="media-card__img"></div><div class="media-card__body"><h3>Apprenticeships (RAP)</h3><p class="muted">Registered apprenticeship pathways.</p></div></article>
+              <article class="media-card"><div class="media-card__img"></div><div class="media-card__body"><h3>WIOA</h3><p class="muted">Workforce Innovation and Opportunity Act services.</p></div></article>
+            </div>
+          </div>
+          <div data-panel="care" hidden>
+            <div class="media-grid">
+              <article class="media-card"><div class="media-card__img"></div><div class="media-card__body"><h3>Employment Supports</h3><p class="muted">Vocational employment services.</p></div></article>
+              <article class="media-card"><div class="media-card__img"></div><div class="media-card__body"><h3>Personal &amp; Nursing Supports</h3><p class="muted">Daily living and nursing supports.</p></div></article>
+              <article class="media-card"><div class="media-card__img"></div><div class="media-card__body"><h3>Residential</h3><p class="muted">Residential support services.</p></div></article>
+              <article class="media-card"><div class="media-card__img"></div><div class="media-card__body"><h3>Day Rehabilitation</h3><p class="muted">Day rehabilitation and OHCDS.</p></div></article>
+            </div>
+          </div>
+          <div data-panel="innovative" hidden>
+            <div class="media-grid">
+              <article class="media-card"><div class="media-card__img"></div><div class="media-card__body"><h3>Airbrush US</h3><p class="muted">Creative workforce program.</p></div></article>
+              <article class="media-card"><div class="media-card__img"></div><div class="media-card__body"><h3>Cyber CORE</h3><p class="muted">Cybersecurity training pathway.</p></div></article>
+              <article class="media-card"><div class="media-card__img"></div><div class="media-card__body"><h3>Urban Classic</h3><p class="muted">Community workforce initiative.</p></div></article>
+              <article class="media-card"><div class="media-card__img"></div><div class="media-card__body"><h3>Business &amp; Consulting Services</h3><p class="muted">Technology-driven business solutions.</p></div></article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCK: we are nationwide -->
+  <section class="section section--peach nationwide">
+    <div class="wrap">
+      <div>
+        <h2>We are Nationwide</h2>
+        <p class="muted">From California to Connecticut, KP works with Public Housing Authorities, Workforce Development Boards, School Systems, Veteran Agencies, and Developmental Disability Agencies across the country.</p>
+      </div>
+      <div><img src="assets/us-map.png" alt="Map of the United States showing KP Connect's nationwide reach"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- BLOCK: site footer (CHROME → Drupal region) -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__brand"><img src="assets/logo.png" alt="KP Connect"></div>
+    <div><h4>Explore KP Connect</h4>
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="blog.html">Blog</a><a href="kp-network.html">KP Network</a><a href="contact.html">Contact Us</a></div>
+    <div><h4>Services Quick Access</h4>
+      <a href="services.html">KP Academy</a><a href="services.html">KP University</a><a href="services.html">KP Care</a><a href="services.html">Innovative Workforce</a></div>
+    <div><h4>Help</h4>
+      <a href="contact.html">Live Chat</a><a href="contact.html">Contact</a><a href="#">FAQ</a></div>
+    <div>
+      <h4>Follow Us</h4>
+      <div class="social"><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Twitter">𝕏</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="YouTube">▶</a></div>
+      <h4 style="margin-top:18px">Stay Connected</h4>
+      <p class="muted" style="margin:0 0 10px">Subscribe to our newsletter</p>
+      <div class="newsletter"><label class="visually-hidden" for="nl-email">Email</label>
+        <input id="nl-email" type="email" placeholder="Enter your email">
+        <button class="btn btn--primary" type="button" style="width:100%">Subscribe</button></div>
+    </div>
+  </div>
+  <div class="site-footer__bar"><div class="wrap">
+    <span><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></span>
+    <span class="muted">© <span id="yr"></span> KP Connect. All rights reserved.</span>
+  </div></div>
+</footer>
+
+<script src="js/configurator.js"></script>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>
