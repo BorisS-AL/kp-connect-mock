@@ -1,0 +1,15 @@
+# Netlify config for the KP Connect mock (static site).
+# Method A (drag-and-drop): you don't need this file — just drop the folder.
+# Method B (Git-connected): point Netlify at this repo; settings below apply.
+
+[build]
+  publish = "."        # the site root (this folder) — no build step, it's static
+  command = ""         # static site: nothing to compile
+
+# Basic security headers — harmless for a mock, good habit for the Drupal team.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"

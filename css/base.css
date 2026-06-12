@@ -1,0 +1,52 @@
+/* ============================================================================
+   KP CONNECT — BASE
+   Resets + element-level typography. References tokens.css only (no raw values
+   that belong in tokens). Drupal note: this maps to a theme's base/global layer.
+   ============================================================================ */
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }            /* [CONFIRMED] smooth scrolling nav */
+body{ margin:0; }
+
+body{
+  font-family:var(--font-body);
+  font-size:var(--fs-body);
+  line-height:var(--lh-body);
+  color:var(--ink);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3{ font-family:var(--font-head); line-height:var(--lh-tight); margin:0 0 .4em; }
+h1{ font-size:var(--fs-h1); font-weight:var(--fw-bold); }
+h2{ font-size:var(--fs-h2); font-weight:var(--fw-bold); color:var(--heading-color); }
+h3{ font-size:var(--fs-h3); font-weight:var(--fw-semi); }
+p{ margin:0 0 1em; }
+a{ color:var(--link); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+img{ max-width:100%; display:block; }
+
+/* Shared layout helpers */
+.wrap{ max-width:var(--maxw); margin-inline:auto; padding-inline:var(--pad); }
+.section{ padding-block:var(--section-y); }
+.muted{ color:var(--muted); }
+.lead{ font-size:calc(var(--fs-body) + 2px); color:var(--muted); max-width:60ch; }
+.eyebrow{ text-transform:uppercase; letter-spacing:.14em; font-size:var(--fs-small);
+          font-weight:var(--fw-bold); color:var(--accent); }
+.center-text{ text-align:center; }
+
+/* Buttons — name by role, not color. [CONFIRMED] filled-orange + outline variants. */
+.btn{ display:inline-block; padding:12px 22px; border-radius:var(--radius);
+      font-weight:var(--fw-semi); font-size:15px; border:2px solid transparent;
+      cursor:pointer; transition:transform .15s ease, box-shadow .15s ease, background .15s ease; }
+.btn--primary{ background:var(--accent); color:var(--on-accent); }
+.btn--primary:hover{ transform:translateY(-2px); box-shadow:var(--shadow); text-decoration:none; } /* [CONFIRMED] CTA hover animation */
+.btn--outline{ background:transparent; color:var(--accent); border-color:var(--accent); }
+.btn--outline:hover{ background:var(--accent); color:var(--on-accent); text-decoration:none; }
+.actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; }
+
+/* Accessibility — [CONFIRMED goal] ADA compliance */
+:focus-visible{ outline:3px solid var(--kp-orange); outline-offset:2px; }
+.visually-hidden{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+.skip-link{ position:absolute; left:-999px; top:0; background:var(--ink); color:#fff; padding:10px 16px; z-index:200; }
+.skip-link:focus{ left:8px; top:8px; }

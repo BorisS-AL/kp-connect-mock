@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KP Connect — Home (scaffold)</title>
+<meta name="description" content="KP Connect — workforce development, education, community impact and talent supply-chain platform.">
+<!--
+  ==========================================================================
+  KP CONNECT — HOMEPAGE SCAFFOLD  (Drupal-ready block structure)
+  --------------------------------------------------------------------------
+  STATUS: structural scaffold + confirmed brand tokens. Visual specifics
+  (imagery, exact spacing/type, real stat numbers) are STUBBED and flagged.
+  Real copy is pulled from KP Connect Descriptive Transcript.docx.
+  Each <!-- BLOCK: x --> is a self-contained section = one Drupal block/template.
+  "Chrome" (header/footer) = Drupal regions. Everything visible is editable text.
+  Design tokens live once in css/tokens.css. See STUBS.md for the swap-list.
+  ==========================================================================
+-->
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/blocks.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- BLOCK: configurator — REVIEW AID ONLY. Delete this block for production. -->
+<div class="configurator" role="region" aria-label="Mock configurator (review aid)">
+  <div class="wrap">
+    <strong>Configurator</strong>
+    <div class="cfg-group"><span>Accent</span>
+      <button data-set="version" data-val="a" class="on">Orange A</button>
+      <button data-set="version" data-val="b">Red B</button>
+    </div>
+    <div class="cfg-group"><span>Lead layout</span>
+      <button data-set="layout" data-val="left" class="on">Left</button>
+      <button data-set="layout" data-val="center">Centered</button>
+    </div>
+    <div class="cfg-group"><span>Density</span>
+      <button data-set="density" data-val="light" class="on">Light</button>
+      <button data-set="density" data-val="dense">Dense</button>
+    </div>
+    <span class="cfg-note">live toggles — no reload. Review aid only, not a site feature.</span>
+  </div>
+</div>
+
+<!-- BLOCK: scaffold banner — REVIEW AID ONLY. Delete for production. -->
+<div class="scaffold-banner"><div class="wrap">
+  <strong>Scaffold build.</strong> Structure + confirmed brand colors are real; imagery, exact type/spacing and stat numbers are stubbed pending Figma inspect. See STUBS.md.
+</div></div>
+
+<!-- BLOCK: site header (CHROME → Drupal region; identical on every page) -->
+<header class="site-header">
+  <div class="wrap">
+    <!-- field: logo (STUB: real logo asset) -->
+    <a class="site-header__logo" href="index.html"><span class="logo-mark" aria-hidden="true"></span><span>KP Connect</span></a>
+    <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle menu">&#9776;</button>
+    <!-- field: main navigation (editable menu) -->
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="index.html" class="is-active">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">KP Network</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- BLOCK: hero -->
+  <section class="hero">
+    <!-- field: hero media (STUB: image/video from Figma) -->
+    <div class="hero__media"><span class="ph-label">[ hero image — stub ]</span></div>
+    <div class="hero__cta">
+      <!-- field: primary CTA -->
+      <a class="btn btn--primary" href="#">Join KP Network</a>
+    </div>
+  </section>
+
+  <!-- BLOCK: statement band (CONFIRMED: orange→red gradient, white text) -->
+  <section class="statement">
+    <div class="wrap">
+      <!-- field: statement (real copy from narrative) -->
+      <p>At KP Connect, we help individuals, organizations, and communities grow through a supportive ecosystem where skills are valued, shared, and rewarded to succeed in a changing world.</p>
+    </div>
+  </section>
+
+  <!-- BLOCK: about + impact stats -->
+  <section class="section about">
+    <div class="wrap">
+      <div class="l-lead">
+        <h2>About KP Connect</h2>
+        <!-- field: about body (STUB: real copy pending; Figma shows lorem) -->
+        <p class="muted">[Placeholder copy] KP Connect is a workforce development, education, community impact and talent supply-chain platform connecting individuals, employers, nonprofits, educators, funders and government agencies.</p>
+        <div class="actions">
+          <a class="btn btn--primary" href="#">Learn More</a>
+          <a class="btn btn--outline" href="#">CEO &amp; Founder</a>
+        </div>
+      </div>
+      <div class="about__media">
+        <div class="ph">[ team image — stub ]</div>
+        <!-- field: impact stats (CONFIRMED animated counters; STUB real numbers) -->
+        <div class="stats-card">
+          <div class="stat"><div class="stat__num" data-target="0" data-suffix="+">00+</div><div class="stat__label">Years of Impact</div></div>
+          <div class="stat"><div class="stat__num" data-target="0" data-suffix="+">00+</div><div class="stat__label">Lives Changed</div></div>
+          <div class="stat"><div class="stat__num" data-target="0" data-suffix="%">00%</div><div class="stat__label">Success Rate</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCK: audience select ("I am here as an…") -->
+  <section class="section audience">
+    <div class="wrap">
+      <h2 class="center-text">I am here as an…</h2>
+      <div class="audience__grid">
+        <!-- ONE card component, rendered per audience -->
+        <article class="audience-card"><div class="ph"></div>
+          <div><h3>Individual</h3><p class="muted">Education, workforce and support services.</p>
+          <a class="btn btn--outline" href="#">Know More</a></div></article>
+        <article class="audience-card"><div class="ph"></div>
+          <div><h3>Organization</h3><p class="muted">Offerings for employers and partners.</p>
+          <a class="btn btn--outline" href="#">Know More</a></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCK: services overview (ONE card component, rendered 4×) -->
+  <section class="section services">
+    <div class="wrap">
+      <h2>KP Services</h2>
+      <p class="muted">Four service pillars.</p>
+      <div class="services__grid">
+        <article class="service-card"><div class="ph"></div><h3>KP Academy</h3>
+          <ul><li>Scholars</li><li>Tutors</li><li>Mentors</li><li>Internship</li><li>Career Advisory</li></ul></article>
+        <article class="service-card"><div class="ph"></div><h3>KP University</h3>
+          <ul><li>Professional Development</li><li>Workforce Development</li><li>Apprenticeships</li><li>WIOA</li></ul></article>
+        <article class="service-card"><div class="ph"></div><h3>KP Care</h3>
+          <ul><li>Employment Supports</li><li>Nursing Supports</li><li>Residential</li><li>Day Rehabilitation</li></ul></article>
+        <article class="service-card"><div class="ph"></div><h3>Innovative Workforce</h3>
+          <ul><li>Airbrush US</li><li>Cyber CORE</li><li>Urban Classic</li><li>Business Services</li><li>Consulting</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCK: stakeholder ecosystem -->
+  <section class="section ecosystem">
+    <div class="wrap">
+      <h2>Different sectors. One shared mission.</h2>
+      <p class="muted">Relationships among employers, customers, affinity groups, funders and educators.</p>
+      <div class="ecosystem__diagram">[ stakeholder ecosystem diagram — stub ]</div>
+    </div>
+  </section>
+
+  <!-- BLOCK: talent supply chain -->
+  <section class="section supply">
+    <div class="wrap">
+      <div class="l-lead">
+        <h2>The Talent Supply Chain</h2>
+        <p class="muted">Demand-driven workforce development, employer skill alignment and community collaboration — supply-chain theory applied to talent. A central KP Connect value proposition.</p>
+        <div class="actions"><a class="btn btn--primary" href="#">Learn More</a></div>
+      </div>
+      <div class="supply__media">[ supply-chain visual — stub ]</div>
+    </div>
+  </section>
+
+  <!-- BLOCK: social proof (metrics + testimonials) -->
+  <section class="section social-proof">
+    <div class="wrap">
+      <div class="metrics">
+        <div><div class="metric__num" data-target="0">0</div><div class="muted">Individuals Upskilled</div></div>
+        <div><div class="metric__num" data-target="0">0</div><div class="muted">Businesses Supported</div></div>
+        <div><div class="metric__num" data-target="0">0</div><div class="muted">Communities Supported</div></div>
+        <div><div class="metric__num" data-target="0">0</div><div class="muted">Partner Organizations</div></div>
+      </div>
+      <!-- Drupal note: testimonials are a view-driven list (one card component). -->
+      <div class="testimonials">
+        <article class="testimonial"><div class="ph"></div><h3>Video testimonial</h3><p class="muted">[Success story — stub]</p></article>
+        <article class="testimonial"><div class="ph"></div><h3>Video testimonial</h3><p class="muted">[Success story — stub]</p></article>
+        <article class="testimonial"><div class="ph"></div><h3>Client endorsement</h3><p class="muted">[Endorsement — stub]</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCK: CTA band -->
+  <section class="section">
+    <div class="wrap"><div class="cta-band"><div class="inner">
+      <div><h2>Ready to join the KP Network?</h2><p style="opacity:.9;margin:0">One supportive ecosystem. Many ways in.</p></div>
+      <a class="btn btn--primary" href="#">Join KP Network</a>
+    </div></div></div>
+  </section>
+
+</main>
+
+<!-- BLOCK: site footer (CHROME → Drupal region) -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <h4>Explore KP Connect</h4>
+      <a href="#">Home</a><a href="#">About</a><a href="#">Services</a><a href="#">KP Network</a><a href="#">Blog</a><a href="#">Contact Us</a>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <a href="#">KP Academy</a><a href="#">KP University</a><a href="#">KP Care</a><a href="#">Innovative Workforce</a>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <a href="#">Contact</a><a href="#">FAQ</a>
+      <p class="muted" style="margin-top:10px">1801 McCormick Dr #350, Largo, MD 20774<br>(301) 883-8256<br>careers@kpconnect.com</p>
+    </div>
+    <div class="newsletter">
+      <h4>Newsletter</h4>
+      <label class="visually-hidden" for="nl-email">Email</label>
+      <input id="nl-email" type="email" placeholder="Your email">
+      <button class="btn btn--primary" type="button">Sign Up</button>
+    </div>
+  </div>
+  <div class="site-footer__bar"><div class="wrap">
+    <span>© <span id="yr"></span> KP Connect.</span>
+    <span>Scaffold — Drupal-ready blocks · tokens in css/tokens.css</span>
+  </div></div>
+</footer>
+
+<script src="js/configurator.js"></script>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>

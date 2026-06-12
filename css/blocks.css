@@ -1,0 +1,124 @@
+/* ============================================================================
+   KP CONNECT — BLOCKS
+   One section per BLOCK. Each block is self-contained and maps to a Drupal
+   block/template. Class names describe WHAT a thing is, never how it looks.
+   Visual specifics (exact spacing, imagery, type) are [STUB] pending Figma.
+   ============================================================================ */
+
+/* ---- BLOCK: configurator (REVIEW AID ONLY — delete for production) -------- */
+.configurator{ position:sticky; top:0; z-index:100; background:var(--ink); color:#fff; font-size:13px; }
+.configurator .wrap{ display:flex; flex-wrap:wrap; align-items:center; gap:18px; padding-block:10px; }
+.configurator strong{ letter-spacing:.02em; }
+.configurator .cfg-group{ display:flex; align-items:center; gap:6px; }
+.configurator .cfg-group > span{ opacity:.7; }
+.configurator button{ background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.25);
+                      padding:5px 11px; border-radius:999px; cursor:pointer; font-size:12px; }
+.configurator button.on{ background:#fff; color:var(--ink); border-color:#fff; font-weight:700; }
+.configurator .cfg-note{ margin-left:auto; opacity:.65; font-size:11px; }
+
+/* ---- BLOCK: scaffold banner (REVIEW AID ONLY — delete for production) ----- */
+.scaffold-banner{ background:#fff7e6; border-bottom:1px solid #f0d98c; color:#7a5b00; font-size:13px; }
+.scaffold-banner .wrap{ padding-block:10px; }
+
+/* ---- BLOCK: site header (CHROME → Drupal region, identical every page) ---- */
+.site-header{ position:sticky; top:0; z-index:60; background:var(--bg); border-bottom:1px solid var(--line); } /* [CONFIRMED] sticky on scroll */
+.site-header .wrap{ display:flex; align-items:center; justify-content:space-between; padding-block:14px; }
+.site-header__logo{ display:flex; align-items:center; gap:10px; font-weight:var(--fw-bold); color:var(--ink); } /* [CONFIRMED] logo left */
+.site-header__logo .logo-mark{ width:34px; height:34px; border-radius:50%; background:var(--kp-gradient); } /* [STUB] real logo asset pending */
+.site-nav{ display:flex; align-items:center; gap:22px; }                /* [CONFIRMED] nav right */
+.site-nav a{ color:var(--ink); font-size:15px; }
+.site-nav a:hover,.site-nav a.is-active{ color:var(--accent); text-decoration:none; }
+.nav-toggle{ display:none; background:none; border:0; font-size:24px; cursor:pointer; color:var(--ink); } /* hamburger, mobile only */
+
+/* ---- BLOCK: hero ---------------------------------------------------------- */
+.hero{ background:var(--surface); }
+.hero__media{ height:420px; background:var(--surface); display:grid; place-items:center; } /* [STUB] hero image/video from Figma */
+.hero__media .ph-label{ color:var(--muted); font-size:var(--fs-small); }
+.hero__cta{ display:flex; justify-content:center; padding-block:28px; }
+
+/* ---- BLOCK: statement band ([CONFIRMED] orange→red gradient, white text) -- */
+.statement{ background:var(--kp-gradient); color:var(--on-accent); }
+.statement .wrap{ padding-block:36px; text-align:center; }
+.statement p{ font-size:calc(var(--fs-body) + 6px); font-weight:var(--fw-semi); max-width:70ch; margin-inline:auto; margin-bottom:0; }
+
+/* ---- BLOCK: about + impact stats ----------------------------------------- */
+.about .wrap{ display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+.about__media{ position:relative; }
+.about__media .ph{ aspect-ratio:4/3; background:var(--surface); border-radius:var(--radius-lg); display:grid; place-items:center; color:var(--muted); } /* [STUB] team image */
+.stats-card{ position:absolute; right:16px; bottom:-24px; background:var(--bg); border-radius:var(--radius-lg);
+             box-shadow:var(--shadow); display:flex; gap:28px; padding:18px 26px; }
+.stat{ text-align:center; }
+.stat__num{ font-family:var(--font-head); font-size:30px; font-weight:var(--fw-bold); color:var(--accent); } /* [CONFIRMED] animated counter; [STUB] real values */
+.stat__label{ font-size:var(--fs-small); color:var(--muted); }
+
+/* ---- BLOCK: audience select ("I am here as an…") -------------------------- */
+.audience .wrap{ }
+.audience__grid{ display:grid; grid-template-columns:1fr 1fr; gap:var(--gap); margin-top:28px; }
+.audience-card{ display:flex; gap:16px; align-items:center; border:1px solid var(--line); border-radius:var(--radius-lg);
+                padding:22px; background:var(--bg); transition:transform .15s ease, box-shadow .15s ease; }
+.audience-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow); } /* [CONFIRMED] card lift on hover */
+.audience-card .ph{ width:120px; height:90px; flex:0 0 auto; background:var(--surface); border-radius:var(--radius); } /* [STUB] image */
+
+/* ---- BLOCK: services overview (ONE card component, rendered 4×) ----------- */
+.services__grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:var(--gap); margin-top:28px; } /* [CONFIRMED] 4-col desktop */
+.service-card{ border:1px solid var(--line); border-radius:var(--radius-lg); padding:22px; background:var(--bg);
+               transition:transform .15s ease, box-shadow .15s ease; }
+.service-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow); } /* [CONFIRMED] lift effect */
+.service-card .ph{ height:120px; background:var(--surface); border-radius:var(--radius); margin-bottom:16px; } /* [STUB] icon/illustration */
+.service-card ul{ margin:8px 0 0; padding-left:18px; color:var(--muted); font-size:var(--fs-small); }
+
+/* ---- BLOCK: ecosystem ("Different sectors. One shared mission.") ---------- */
+.ecosystem{ background:var(--surface); }
+.ecosystem .wrap{ text-align:center; }
+.ecosystem__diagram{ height:320px; background:var(--bg); border:1px dashed var(--line); border-radius:var(--radius-lg);
+                     display:grid; place-items:center; color:var(--muted); margin-top:24px; } /* [STUB] stakeholder diagram from Figma */
+
+/* ---- BLOCK: talent supply chain ------------------------------------------ */
+.supply .wrap{ display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+.supply__media{ height:300px; background:var(--surface); border-radius:var(--radius-lg); display:grid; place-items:center; color:var(--muted); } /* [STUB] */
+
+/* ---- BLOCK: social proof (metrics + testimonials) ------------------------ */
+.social-proof{ }
+.metrics{ display:grid; grid-template-columns:repeat(4,1fr); gap:var(--gap); text-align:center; }
+.metric__num{ font-family:var(--font-head); font-size:34px; font-weight:var(--fw-bold); color:var(--accent); } /* [STUB] real numbers */
+.testimonials{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap); margin-top:40px; } /* [CONFIRMED note] Drupal view-driven */
+.testimonial{ border:1px solid var(--line); border-radius:var(--radius-lg); padding:22px; }
+.testimonial .ph{ height:160px; background:var(--surface); border-radius:var(--radius); margin-bottom:14px; } /* [STUB] video thumb */
+
+/* ---- BLOCK: CTA band ------------------------------------------------------ */
+.cta-band{ background:var(--kp-gradient); color:var(--on-accent); border-radius:var(--radius-lg); }
+.cta-band .inner{ padding:44px var(--pad); display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+.cta-band h2{ color:var(--on-accent); margin:0; }
+.cta-band .btn--primary{ background:var(--bg); color:var(--accent); }
+
+/* ---- BLOCK: footer (CHROME → Drupal region) ------------------------------ */
+.site-footer{ background:var(--ink); color:#cfd3d9; font-size:var(--fs-small); }
+.site-footer .wrap{ display:grid; grid-template-columns:repeat(4,1fr); gap:var(--gap); padding-block:48px; }
+.site-footer h4{ color:#fff; font-size:14px; margin:0 0 12px; font-family:var(--font-head); }
+.site-footer a{ color:#cfd3d9; display:block; padding-block:3px; }
+.site-footer a:hover{ color:#fff; }
+.site-footer__bar{ border-top:1px solid rgba(255,255,255,.12); }
+.site-footer__bar .wrap{ display:flex; justify-content:space-between; padding-block:18px; }
+.newsletter input{ width:100%; padding:10px; border-radius:var(--radius); border:1px solid rgba(255,255,255,.25);
+                   background:rgba(255,255,255,.06); color:#fff; margin-bottom:10px; }
+
+/* ============================================================================
+   RESPONSIVE  ([CONFIRMED] 1440 → 4col, 768 → 2col, 375 → 1col + hamburger)
+   ============================================================================ */
+@media (max-width:1024px){
+  .services__grid{ grid-template-columns:repeat(2,1fr); }   /* tablet: 2-col */
+  .testimonials{ grid-template-columns:1fr 1fr; }
+  .metrics{ grid-template-columns:1fr 1fr; }
+}
+@media (max-width:768px){
+  .about .wrap,.supply .wrap{ grid-template-columns:1fr; }
+  .audience__grid{ grid-template-columns:1fr; }
+  .nav-toggle{ display:block; }
+  .site-nav{ display:none; }
+  .site-nav.is-open{ display:flex; flex-direction:column; position:absolute; top:100%; right:0; left:0;
+                     background:var(--bg); border-bottom:1px solid var(--line); padding:16px var(--pad); gap:14px; }
+}
+@media (max-width:480px){
+  .services__grid,.testimonials,.metrics,.site-footer .wrap{ grid-template-columns:1fr; } /* mobile: single column */
+  .stats-card{ position:static; margin-top:16px; }
+}

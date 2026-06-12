@@ -1,0 +1,94 @@
+/* ============================================================================
+   KP CONNECT — DESIGN TOKENS
+   THE ONE PLACE to change the look. Every other stylesheet references these.
+   For a Drupal team: these map 1:1 to your theme's CSS custom properties / SCSS
+   variables. Change a value here and it applies everywhere.
+
+   STATUS KEY:
+     [CONFIRMED] = read from the brand doc / high-fidelity PDF.
+     [STUB]      = placeholder pending exact Figma inspect values. See STUBS.md.
+   ============================================================================ */
+
+:root{
+  /* ---- BRAND COLOR ---------------------------------------------------------
+     [CONFIRMED] Primary profile from KP Connect Redesign Details.docx:
+       #E17327 (orange)  +  #C02126 (red)
+     The homepage uses these as a left-to-right gradient on the statement band. */
+  --kp-orange:        #E17327;   /* [CONFIRMED] primary */
+  --kp-red:           #C02126;   /* [CONFIRMED] secondary */
+  --kp-gradient:      linear-gradient(90deg, var(--kp-orange) 0%, var(--kp-red) 100%); /* [CONFIRMED] hero statement band */
+
+  /* Neutrals — [STUB] approximated from the PDF; confirm exact hex in Figma. */
+  --ink:              #23262b;   /* [STUB] body text */
+  --muted:            #6b7280;   /* [STUB] secondary text */
+  --line:             #e3e6ea;   /* [STUB] hairline borders */
+  --surface:          #f5f6f8;   /* [STUB] light section / image placeholder */
+  --bg:               #ffffff;   /* [STUB] page background */
+  --on-accent:        #ffffff;   /* text on orange/red */
+
+  /* Semantic roles (reference these in blocks, not the raw brand colors) */
+  --accent:           var(--kp-orange);
+  --accent-2:         var(--kp-red);
+  --heading-color:    var(--kp-orange);   /* [CONFIRMED] section headings render orange */
+  --link:             var(--kp-orange);
+
+  /* ---- TYPE ----------------------------------------------------------------
+     [STUB] Figma font family not yet read from inspect. Visually a humanist/
+     geometric sans (Poppins/Montserrat-like for headings). Replace --font-* once
+     confirmed; everything below cascades from these two tokens. */
+  --font-head: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; /* [STUB] */
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;   /* [STUB] */
+
+  /* Type scale — [STUB] pending exact Figma sizes */
+  --fs-h1:    44px;   /* [STUB] */
+  --fs-h2:    30px;   /* [STUB] */
+  --fs-h3:    20px;   /* [STUB] */
+  --fs-body:  16px;   /* [STUB] */
+  --fs-small: 13px;   /* [STUB] */
+  --lh-tight: 1.15;
+  --lh-body:  1.6;
+  --fw-bold:  700;
+  --fw-semi:  600;
+
+  /* ---- SPACING & LAYOUT ----------------------------------------------------
+     [CONFIRMED] breakpoints from brand doc: desktop 1440 (4-col cards),
+     tablet 768 (2-col), mobile 375 (1-col + hamburger).
+     [STUB] exact section padding / gaps pending Figma. */
+  --maxw:        1200px;  /* [STUB] content max width */
+  --pad:         24px;    /* [STUB] gutter */
+  --gap:         24px;    /* [STUB] grid gap */
+  --section-y:   72px;    /* [STUB] vertical section rhythm */
+  --radius:      6px;     /* [STUB] button/card corner radius */
+  --radius-lg:   12px;    /* [STUB] large card radius */
+  --shadow:      0 8px 24px rgba(0,0,0,.08); /* [STUB] card lift shadow */
+
+  /* Breakpoints are documented here for reference; used in media queries below.
+     --bp-tablet: 768px   --bp-mobile: 375px  (see base.css / blocks.css) */
+}
+
+/* ============================================================================
+   CONFIGURATOR STATES  (review aid only — not part of the final site)
+   Each toggle swaps a class on <html>; tokens shift live. See js/configurator.js.
+   These are DESIGN-CONVERSATION toggles, NOT confirmed Figma variants.
+   ============================================================================ */
+
+/* Style B — alternate accent treatment of the SAME blocks
+   (buttons/headings lead with red instead of orange) */
+html.v-b{
+  --accent:        var(--kp-red);
+  --heading-color: var(--kp-red);
+  --radius:        2px;
+}
+
+/* Density — compact spacing */
+html.dense{
+  --section-y: 44px;
+  --gap:       16px;
+  --pad:       16px;
+  --fs-h1:     36px;
+  --fs-h2:     24px;
+}
+
+/* Layout — center the hero/about lead text instead of left-aligned */
+html.center .l-lead{ text-align:center; margin-inline:auto; }
+html.center .l-lead .actions{ justify-content:center; }
